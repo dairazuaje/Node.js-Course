@@ -31,7 +31,7 @@ const loadNotes = () => {
 *
 * @param {Array}    Collection of notes that have been added to JSON storage file
 */
-const saveNotes = (notes) => fs.writeFileSync("notes.json", JSON.stringify(notes));
+const saveNotes = (notes) => fs.writeFileSync("notes.json", JSON.stringify(notes, null, "\t"));
 
 /*
 * Adds notes to json storage file.
@@ -106,7 +106,6 @@ const readNote = (title) => {
 }
 
 module.exports = {
-    getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote,
     listNotes: listNotes,
